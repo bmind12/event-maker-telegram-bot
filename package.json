@@ -4,8 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "dev": "next dev",
+        "prebuild": "rimraf dist",
         "build": "rollup --config",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|md)\"",
+        "format:check": "npm run format -- --list-different",
+        "format:write": "npm run format -- --write",
+        "types:check": "tsc",
+        "lint": "eslint --ignore-path .gitignore --ext .js,.ts .",
+        "validate": "npm run types:check && npm run format:check && npm run lint && npm run build"
     },
     "dependencies": {
         "express": "^4.17.1"
@@ -22,6 +30,7 @@
         "eslint": "^7.9.0",
         "eslint-config-prettier": "^6.11.0",
         "prettier": "^2.1.1",
+        "rimraf": "^3.0.2",
         "rollup": "^2.28.1",
         "tslib": "^2.0.1",
         "typescript": "^4.0.2"
