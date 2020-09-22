@@ -2,9 +2,8 @@
     "name": "event-maker-telegram-bot",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
-        "dev": "next dev",
         "prebuild": "rimraf dist",
         "build": "rollup --config",
         "test": "echo \"Error: no test specified\" && exit 1",
