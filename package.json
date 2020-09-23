@@ -1,0 +1,54 @@
+{
+    "name": "event-maker-telegram-bot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "rollup --config",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|md)\"",
+        "format:check": "npm run format -- --list-different",
+        "format:write": "npm run format -- --write",
+        "types:check": "tsc",
+        "lint": "eslint --ignore-path .gitignore --ext .js,.ts .",
+        "validate": "npm run types:check && npm run format:check && npm run lint && npm run build"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "@babel/preset-typescript": "^7.10.4",
+        "@rollup/plugin-babel": "^5.2.1",
+        "@rollup/plugin-node-resolve": "^9.0.0",
+        "@typescript-eslint/eslint-plugin": "^4.1.0",
+        "@typescript-eslint/parser": "^4.1.0",
+        "commitizen": "^4.2.1",
+        "eslint": "^7.9.0",
+        "eslint-config-prettier": "^6.11.0",
+        "prettier": "^2.1.1",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.28.1",
+        "tslib": "^2.0.1",
+        "typescript": "^4.0.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bmind12/event-maker-telegram-bot.git"
+    },
+    "keywords": [
+        "node.js",
+        "express",
+        "bot",
+        "telegram",
+        "calendar",
+        "event"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/bmind12/event-maker-telegram-bot/issues"
+    },
+    "homepage": "https://github.com/bmind12/event-maker-telegram-bot#readme"
+}
