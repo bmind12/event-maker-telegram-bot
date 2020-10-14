@@ -7,5 +7,5 @@ export default {
         format: 'cjs',
     },
     plugins: [...plugins],
-    external: ['express', 'dotenv'],
+    external: ['dotenv', 'telegraf'],
 };
