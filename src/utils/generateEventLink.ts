@@ -67,7 +67,7 @@ function generateCalendarEvent(event: CalendarEvent): CalendarLinkEvent {
         parseEventDatesIntoSpecialFormat(event.start),
         FORMAT,
         new Date()
-    );
+    ).toISOString();
 
     const end =
         event.end && !event.allDay
@@ -75,7 +75,7 @@ function generateCalendarEvent(event: CalendarEvent): CalendarLinkEvent {
                   parseEventDatesIntoSpecialFormat(event.end),
                   FORMAT,
                   new Date()
-              )
+              ).toISOString()
             : undefined;
 
     return {

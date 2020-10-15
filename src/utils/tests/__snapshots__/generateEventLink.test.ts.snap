@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateEventLink generates Google link 1`] = `"https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20201220T163000Z%2F20201221T010000Z&location=Politick%C3%BDch%20v%C4%9Bz%C5%88%C5%AF%201511%2F5&text=New%20year%20party"`;
+
+exports[`generateEventLink generates ICS string 1`] = `
+"BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:20201220T163000Z
+DTEND:20201221T010000Z
+SUMMARY:New year party
+LOCATION:Politických vězňů 1511/5
+END:VEVENT
+END:VCALENDAR
+"
+`;
+
+exports[`generateEventLink generates Outlook link 1`] = `"https://outlook.live.com/calendar/0/deeplink/compose?enddt=2020-12-21T01:00:00&location=Politick%C3%BDch%20v%C4%9Bz%C5%88%C5%AF%201511%2F5&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2020-12-20T16:30:00&subject=New%20year%20party"`;
