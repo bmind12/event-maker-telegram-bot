@@ -66,18 +66,16 @@ function generateCalendarEvent(event: CalendarEvent): CalendarLinkEvent {
     const start = parse(
         parseEventDatesIntoSpecialFormat(event.start),
         FORMAT,
-        new Date(1, 1, 1970)
-    );
-
-    console.log(start);
+        new Date()
+    ).toISOString();
 
     const end =
         event.end && !event.allDay
             ? parse(
                   parseEventDatesIntoSpecialFormat(event.end),
                   FORMAT,
-                  new Date(1, 1, 1970)
-              )
+                  new Date()
+              ).toISOString()
             : undefined;
 
     return {
