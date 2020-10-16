@@ -5,26 +5,29 @@ import {
 } from '../generateEventLink';
 
 describe('generateEventLink', () => {
+    // UTC is used to be indifferent to locales
+    const startDate = new Date(Date.UTC(2020, 11, 20, 16, 30, 0));
+    const endDate = new Date(Date.UTC(2020, 11, 21, 1, 0, 0));
     const event: CalendarEvent = {
         title: 'New year party',
         location: 'Politických vězňů 1511/5',
         allDay: false,
         start: {
-            day: 20,
-            month: 12,
-            year: 2020,
+            day: startDate.getDate(),
+            month: startDate.getMonth() + 1, // months in JS start with 0
+            year: startDate.getFullYear(),
             optional: {
-                hours: 17,
-                minutes: 30,
+                hours: startDate.getHours(),
+                minutes: startDate.getMinutes(),
             },
         },
         end: {
-            day: 21,
-            month: 12,
-            year: 2020,
+            day: endDate.getDate(),
+            month: endDate.getMonth() + 1, // months in JS start with 0
+            year: endDate.getFullYear(),
             optional: {
-                hours: 2,
-                minutes: 0,
+                hours: endDate.getHours(),
+                minutes: endDate.getMinutes(),
             },
         },
     };
