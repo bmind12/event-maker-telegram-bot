@@ -6,7 +6,6 @@ exports[`generateEventLink generates ICS string 1`] = `
 "BEGIN:VCALENDAR
 VERSION:2.0
 BEGIN:VEVENT
-URL:http://localhost/
 DTSTART:20201220T163000Z
 DTEND:20201221T010000Z
 SUMMARY:New year party
