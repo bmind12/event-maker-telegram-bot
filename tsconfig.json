@@ -8,10 +8,14 @@
         "noUnusedParameters": true,
         "moduleResolution": "node",
         "baseUrl": "./src",
-        "rootDirs": ["./src"],
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "paths": {
+            "config/*": ["config/*"],
+            "resources/*": ["../resources/*"]
+        }
     },
     "include": ["src"],
     "exclude": ["node_modules", "dist"]
