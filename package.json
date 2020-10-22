@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "dotenv": "^8.2.0",
+        "i18next": "^19.8.2",
         "telegraf": "^3.38.0"
     },
     "devDependencies": {
