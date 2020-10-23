@@ -5,44 +5,70 @@ import {
 } from '../generateEventLink';
 
 describe('generateEventLink', () => {
-    // UTC is used to be indifferent to locales
-    const startDate = new Date(Date.UTC(2020, 11, 20, 16, 30, 0));
-    const endDate = new Date(Date.UTC(2020, 11, 21, 1, 0, 0));
-    const event: CalendarEvent = {
-        title: 'New year party',
-        location: 'Politických vězňů 1511/5',
-        allDay: false,
-        start: {
-            day: startDate.getDate(),
-            month: startDate.getMonth() + 1, // months in JS start with 0
-            year: startDate.getFullYear(),
-            optional: {
-                hours: startDate.getHours(),
-                minutes: startDate.getMinutes(),
+    describe('non-all day event', () => {
+        const event: CalendarEvent = {
+            title: 'New year party',
+            location: 'Politických vězňů 1511/5',
+            allDay: false,
+            start: {
+                day: 20,
+                month: 11,
+                year: 2020,
+                time: {
+                    hours: 0,
+                    minutes: 30,
+                },
             },
-        },
-        end: {
-            day: endDate.getDate(),
-            month: endDate.getMonth() + 1, // months in JS start with 0
-            year: endDate.getFullYear(),
-            optional: {
-                hours: endDate.getHours(),
-                minutes: endDate.getMinutes(),
+            end: {
+                day: 21,
+                month: 11,
+                year: 2020,
+                time: {
+                    hours: 0,
+                    minutes: 0,
+                },
             },
-        },
-    };
+        };
 
-    it('generates Google link', () => {
-        expect(generateEventLink(event, CalendarType.Google)).toMatchSnapshot();
+        it('generates Google link', () => {
+            expect(
+                generateEventLink(event, CalendarType.Google),
+            ).toMatchSnapshot();
+        });
+
+        it('generates ICS string', () => {
+            expect(
+                generateEventLink(event, CalendarType.ICS),
+            ).toMatchSnapshot();
+        });
     });
 
-    it('generates ICS string', () => {
-        expect(generateEventLink(event, CalendarType.ICS)).toMatchSnapshot();
-    });
+    describe('all day event', () => {
+        const event: CalendarEvent = {
+            title: 'Birthday party',
+            allDay: true,
+            start: {
+                day: 2,
+                month: 4,
+                year: 2020,
+            },
+            end: {
+                day: 5,
+                month: 4,
+                year: 2020,
+            },
+        };
 
-    it('generates Outlook link', () => {
-        expect(
-            generateEventLink(event, CalendarType.Outlook)
-        ).toMatchSnapshot();
+        it('generates Google link', () => {
+            expect(
+                generateEventLink(event, CalendarType.Google),
+            ).toMatchSnapshot();
+        });
+
+        it('generates ICS string', () => {
+            expect(
+                generateEventLink(event, CalendarType.ICS),
+            ).toMatchSnapshot();
+        });
     });
 });
