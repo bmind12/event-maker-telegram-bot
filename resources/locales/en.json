@@ -1,3 +1,16 @@
 {
-    "welcome": "Hello, {{name}}!\nI am an event-maker Bot 🤖🎈I'll help you to create a calendar event which you may add to any calendar and easily share with friends! 😍\nClick `Create a new event` button or send me a /create Command! 😊\nPlease note, I don't store and misuse any provided data 🔒"
+    "welcome": "Hello, {{name}}!\nI am an event-maker Bot 🤖🎈I'll help you to create a calendar event which you may add to any calendar and easily share with friends! 😍\nClick `Create a new event` button or send me a /create Command! 😊\nPlease note, I don't store and misuse any provided data 🔒",
+    "default": "{{name}}, I don't understand what do you want from me! 🥴\nTo create a new event 🎈 please click Create new event button or send me a /create! 😊",
+    "error": {
+        "default": "Something went wrong 🤖"
+    },
+    "strategy": {
+        "getAllDay": "Is your event an all day event? Answer yes or no",
+        "getEndDate": "What is the event end date? Use format: 31/12/2020",
+        "getEndTime": "What is the event end time? Use format: 23:45",
+        "getLocation": "What is the event's location? Answer no to leave it empty",
+        "getName": "What is the event name?",
+        "getStartDate": "What is the event date? Use format: 31/12/2020",
+        "getStartTime": "What is the event start time? Use format: 23:45"
+    }
 }

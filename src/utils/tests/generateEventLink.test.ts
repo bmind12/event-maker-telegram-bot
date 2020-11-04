@@ -2,7 +2,7 @@ import {
     CalendarEvent,
     CalendarType,
     generateEventLink,
-} from '../generateEventLink';
+} from 'utils/generateEventLink';
 
 describe('generateEventLink', () => {
     describe('non-all day event', () => {
