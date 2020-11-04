@@ -8,4 +8,5 @@ module.exports = {
     snapshotSerializers: ['enzyme-to-json/serializer'],
     testRegex: '\\.x?test\\.ts$',
     moduleFileExtensions: ['js', 'ts'],
+    moduleDirectories: ['node_modules', 'src'],
 };
